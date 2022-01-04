@@ -21,3 +21,14 @@ func GetFloat() (float64, error) {
 	}
 	return number, nil
 }
+
+func GetString() (string, error) {
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		return "nil", err
+	}
+
+	input = strings.TrimSpace(input)
+	return input, nil
+}
